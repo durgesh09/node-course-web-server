@@ -8,6 +8,7 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname +'/public'));  //__dirname stores path of project root folder
 
+
 //registering a middleware
 app.use((req, res, next) => {
   var now = new Date().toString();
@@ -52,6 +53,13 @@ app.get('/home',(req,res)=>{
     footerText:'@Copyright 2019 -Durgesh'
   });
 
+});
+
+app.get('/project', (req, res) => {
+  res.render('project.hbs',{
+    pageTitle:'Project Page',
+
+  })
 });
 
 //**** error Message
